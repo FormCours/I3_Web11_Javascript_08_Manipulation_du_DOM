@@ -6,6 +6,7 @@ const btnFin = document.getElementById('btn-fin');
 const container = document.getElementById('container');
 const btnInfo = document.getElementById('btn-info');
 const btnModern = document.getElementById('btn-modern');
+const btnDelete = document.getElementById('btn-delete');
 
 // Ajout d'un element au "fin" du container
 let count = 0;
@@ -89,3 +90,16 @@ btnModern.addEventListener('click', () => {
     container.append(balise2);
 })
 
+btnDelete.addEventListener('click', () => {
+    // Récuperation de la balise a supprimer
+    const targetBalise = document.getElementById('target');
+    
+    console.log(targetBalise.parentElement);
+    console.log(container);
+
+    // Suppression d'une balise depuis son parent
+    container.removeChild(targetBalise);
+
+    // Suppression d'une balise (Elle même)
+    targetBalise.remove();
+})
