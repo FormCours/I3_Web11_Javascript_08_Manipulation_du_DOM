@@ -5,6 +5,7 @@ const btnDebut = document.getElementById('btn-debut');
 const btnFin = document.getElementById('btn-fin');
 const container = document.getElementById('container');
 const btnInfo = document.getElementById('btn-info');
+const btnModern = document.getElementById('btn-modern');
 
 // Ajout d'un element au "fin" du container
 let count = 0;
@@ -70,7 +71,21 @@ btnDebut.addEventListener('click', () => {
 
     // Ajouter la balise en tant que premier element
     const premiereBalise = container.firstElementChild;
-    container.insertBefore(nouvelleBalise, premiereBalise)
+    container.insertBefore(nouvelleBalise, premiereBalise);
 });
 
+btnModern.addEventListener('click', () => {
+    // Depuis fin 2016, il est possible d'utiliser : 
+    //  - append(...)  → Ajout en dernier element
+    //  - prepend(...) → Ajout en premier element
+    // Ces deux méthode accepte les Nodes HTML et le text
+
+    const balise1 = document.createElement('p');
+    balise1.innerText = 'Jennifer';
+    container.prepend(balise1);
+
+    const balise2 = document.createElement('p');
+    balise2.innerText = 'Gaelle';
+    container.append(balise2);
+})
 
