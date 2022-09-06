@@ -46,3 +46,31 @@ btnInfo.addEventListener('click', () => {
     // - La derniere balise enfant de la balise parent
     const derniereBalise = container.lastElementChild;
 })
+
+// Ajouter un element au debut de la 'liste'
+// → En tant que premiere enfant de la balise
+btnDebut.addEventListener('click', () => {
+
+    // Créer la balise suivante : 
+    // <p>Heure : <span class="vert">11:08:30<span><p>
+
+    // - La balise principal
+    const nouvelleBalise = document.createElement('p');
+    nouvelleBalise.innerText = 'Heure : ';
+
+    // - La balise interne (heure)
+    const heureBalise = document.createElement('span');
+    heureBalise.classList.add('vert');
+
+    const now = new Date();
+    heureBalise.innerText = now.toLocaleTimeString();
+
+    // - Combinaison des 2 balises
+    nouvelleBalise.appendChild(heureBalise);
+
+    // Ajouter la balise en tant que premier element
+    const premiereBalise = container.firstElementChild;
+    container.insertBefore(nouvelleBalise, premiereBalise)
+});
+
+

@@ -5,9 +5,15 @@ html {
 body {
     background-color: blueviolet;
     color: aquamarine;
+    height: 1000px;
 }
 
 .jennifer {
     color: black;
     background-color: aquamarine;
+}
+
+.vert {
+    color: #64ae1a;
+    font-weight: bold;
 }
